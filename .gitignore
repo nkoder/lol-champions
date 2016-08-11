@@ -3,3 +3,5 @@
 !.idea/dictionaries/
 !.idea/inspectionProfiles/
 !.idea/codeStyleSettings.xml
+
+node_modules/

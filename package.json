@@ -1,0 +1,22 @@
+{
+  "name": "lol-champions",
+  "version": "1.0.0-development",
+  "description": "Website with League of Legends champions created in order to learn ReactJS basics.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkoder/lol-champions.git"
+  },
+  "author": "pawelbarszcz@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nkoder/lol-champions/issues"
+  },
+  "homepage": "https://nkoder.github.io/lol-champions",
+  "devDependencies": {
+    "live-server": "1.0.0"
+  }
+}
