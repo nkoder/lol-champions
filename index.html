@@ -22,7 +22,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js"></script>
 
 <!-- app -->
-<script type="text/babel" src="src/hello.jsx"></script>
+<script type="text/babel" src="src/champions/champion.jsx"></script>
+<script type="text/babel" src="src/champions/champions.jsx"></script>
+<script type="text/babel" src="src/lol-champions-app.jsx"></script>
+<script type="text/babel">
+    ReactDOM.render(
+            <LolChampionsApp/>,
+            document.getElementById('app')
+    );
+</script>
 
 </body>
 </html>
