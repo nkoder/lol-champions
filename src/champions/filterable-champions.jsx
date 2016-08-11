@@ -1,7 +1,6 @@
 const FilterableChampions = React.createClass({
     _filteringTextChangedTo : function (filteringText) {
         // TODO How to deal with scope and private methods?
-        console.log('Filter is now: ', filteringText);
         this.setState({ filteringText : filteringText });
     },
     getInitialState : function () {
