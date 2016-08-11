@@ -19,7 +19,7 @@ const FilterableChampions = React.createClass({
                     />
                 </div>
                 <Champions
-                    predicate={(champion) => champion.name.toLowerCase().includes(this.state.filteringText)}
+                    predicate={(champion) => champion.name.toLowerCase().includes(this.state.filteringText.trim())}
                 />
             </div>
         );

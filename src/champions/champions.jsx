@@ -1,4 +1,12 @@
 const Champions = React.createClass({
+    propTypes : {
+        predicate : React.PropTypes.func
+    },
+    getDefaultProps : function () {
+        return {
+            predicate : () => true
+        };
+    },
     // TODO How to deal with scope and private methods?
     _fetchChampions : function () {
         return fetch('https://ddragon.leagueoflegends.com/realms/eune.json')
@@ -26,14 +34,18 @@ const Champions = React.createClass({
     },
     render : function () {
         // TODO Can we import somehow 'Champion' instead of having it accessible globally?
+        // TODO Is the 'key' attribute really needed in this array of champions? Why is it needed?
         const championsList = _(this.state.champions)
-            .filter(champion => this.props.predicate(champion))
+            .filter(this.props.predicate)
             .map(champion =>
-                <li><Champion name={champion.name} title={champion.title}/></li>
+                <li>
+                    <Champion
+                        key={champion.name}
+                        name={champion.name}
+                        title={champion.title}
+                    />
+                </li>
             );
-        // const allChampionsList = this.state.champions.map(champion =>
-        {/*<li><Champion name={champion.name} title={champion.title}/></li>*/
-        }
         // );
         return (
             <ul> { championsList } </ul>

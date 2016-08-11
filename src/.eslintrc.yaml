@@ -22,5 +22,4 @@ rules:
   no-undef: warn
   no-unused-vars: warn
   react/jsx-no-undef: warn
-  react/prop-types: warn
   react/react-in-jsx-scope: warn
