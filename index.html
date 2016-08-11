@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head lang="pl">
 
@@ -7,12 +8,21 @@
         LoL Champions
     </title>
 
+    <meta name="description"
+          content="Website with League of Legends champions created in order to learn ReactJS basics.">
+
 </head>
 <body>
 
-<h1>
-    Website with League of Legends champions created in order to learn ReactJS basics.
-</h1>
+<div id="app"></div>
+
+<!-- vendor -->
+<script src="https://npmcdn.com/react@15.3.0/dist/react.min.js"></script>
+<script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js"></script>
+
+<!-- app -->
+<script type="text/babel" src="src/hello.jsx"></script>
 
 </body>
 </html>
