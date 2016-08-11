@@ -3,7 +3,7 @@
   "version": "1.0.0-development",
   "description": "Website with League of Legends champions created in order to learn ReactJS basics.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint src/**/*",
     "start": "node serve.js"
   },
   "repository": {
@@ -17,6 +17,9 @@
   },
   "homepage": "https://nkoder.github.io/lol-champions",
   "devDependencies": {
+    "eslint": "3.2.2",
+    "eslint-config-recommended": "1.3.1",
+    "eslint-plugin-react": "6.0.0",
     "live-server": "1.0.0"
   }
 }
