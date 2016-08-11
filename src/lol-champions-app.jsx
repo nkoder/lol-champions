@@ -1,7 +1,9 @@
 const LolChampionsApp = React.createClass({
     render : function () {
         return (
-            <Champions/>
+            <div>
+                <FilterableChampions/>
+            </div>
         );
     }
 });

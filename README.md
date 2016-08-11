@@ -20,4 +20,5 @@ In case of any problems please note that application was developed with use of:
 * node 6.3.1
 * npm 3.10.5
 * git 2.9.2
+* IntelliJ IDEA 2016.2.1
 * OS X El Capitan 10.11.6

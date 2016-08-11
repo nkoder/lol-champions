@@ -25,15 +25,18 @@ const Champions = React.createClass({
             .catch(exception => console.error(exception));
     },
     render : function () {
+        // TODO Can we import somehow 'Champion' instead of having it accessible globally?
+        const championsList = _(this.state.champions)
+            .filter(champion => this.props.predicate(champion))
+            .map(champion =>
+                <li><Champion name={champion.name} title={champion.title}/></li>
+            );
+        // const allChampionsList = this.state.champions.map(champion =>
+        {/*<li><Champion name={champion.name} title={champion.title}/></li>*/
+        }
+        // );
         return (
-            <ul>
-                { this.state.champions.map(champion =>
-                    <li>
-                        {/* TODO Can we import somehow 'Champion' instead of having it accessible globally? */}
-                        <Champion name={champion.name} title={champion.title}/>
-                    </li>
-                ) }
-            </ul>
+            <ul> { championsList } </ul>
         );
     }
 });
