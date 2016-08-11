@@ -1,3 +1,5 @@
 *.iml
 .idea/*
 !.idea/dictionaries/
+!.idea/inspectionProfiles/
+!.idea/codeStyleSettings.xml

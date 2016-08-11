@@ -1,16 +1,32 @@
-const champions = [
-    {name: 'Ashe'},
-    {name: 'Tristana'},
-    {name: 'Wukong'}
-];
-
 const Champions = React.createClass({
-    render: function () {
+    // TODO How to deal with scope and private methods?
+    _fetchChampions : function () {
+        return fetch('https://ddragon.leagueoflegends.com/realms/eune.json')
+            .then(response => response.json())
+            .then(realm => [realm.cdn, realm.l, realm.n.champion])
+            .then(([cdnUrl, locale, championDataVersion]) =>
+                fetch(`${cdnUrl}/${championDataVersion}/data/${locale}/champion.json`)
+            )
+            .then(response => response.json())
+            .then(championData => _.values(championData.data));
+    },
+    getInitialState : function () {
+        return {
+            champions : []
+        };
+    },
+    componentDidMount : function () {
+        this._fetchChampions()
+            .then(champions => this.setState({ champions : champions }))
+            .catch(exception => console.error(exception));
+    },
+    render : function () {
         return (
             <ul>
-                { champions.map(champion =>
+                { this.state.champions.map(champion =>
                     <li>
-                        <Champion name={champion.name}/>
+                        {/* TODO Can we import somehow 'Champion' instead of having it accessible globally? */}
+                        <Champion name={champion.name} title={champion.title}/>
                     </li>
                 ) }
             </ul>

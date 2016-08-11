@@ -1,5 +1,5 @@
 const LolChampionsApp = React.createClass({
-    render: function () {
+    render : function () {
         return (
             <Champions/>
         );
