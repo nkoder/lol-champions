@@ -5,10 +5,14 @@ const Champions = React.createClass({
             .then(response => response.json())
             .then(realm => [realm.cdn, realm.l, realm.n.champion])
             .then(([cdnUrl, locale, championDataVersion]) =>
-                fetch(`${cdnUrl}/${championDataVersion}/data/${locale}/champion.json`)
+                fetch(`${securedUrl(cdnUrl)}/${championDataVersion}/data/${locale}/champion.json`)
             )
             .then(response => response.json())
             .then(championData => _.values(championData.data));
+
+        function securedUrl(url) {
+            return url.replace('http://', 'https://');
+        }
     },
     getInitialState : function () {
         return {
