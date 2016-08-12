@@ -19,9 +19,12 @@ const FilterableChampions = React.createClass({
                     />
                 </div>
                 <Champions
-                    predicate={(champion) => champion.name.toLowerCase().includes(this.state.filteringText.trim())}
+                    predicate={(champion) => normalized(champion.name).includes(normalized(this.state.filteringText))}
                 />
             </div>
         );
+        function normalized(text) {
+            return text.trim().toLowerCase();
+        }
     }
 });
