@@ -3,8 +3,15 @@ import React from 'react';
 export const Filter = React.createClass({
 
     propTypes : {
-        filteringText : React.PropTypes.string.isRequired,
-        onFilteringTextChange : React.PropTypes.func.isRequired
+        filteringText : React.PropTypes.string,
+        onFilteringTextChange : React.PropTypes.func
+    },
+
+    getDefaultProps : function () {
+        return {
+            filteringText : '',
+            onFilteringTextChange : () => {}
+        };
     },
 
     // TODO How to deal with scope and private methods?

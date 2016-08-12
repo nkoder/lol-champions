@@ -15,9 +15,5 @@ extends:
  - plugin:react/recommended
 
 env:
-  browser: true
+  jest: true
   node: false
-
-rules:
-  no-console: off
-  react/prop-types: warn
