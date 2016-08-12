@@ -19,7 +19,7 @@ export class FilterableChampions extends React.Component {
     render() {
         return (
             <div>
-                Nasme filter:
+                Name filter:
                 <Filter
                     filteringText={this.state.filteringText}
                     onFilteringTextChange={text => this._filteringTextChangedTo(text)}

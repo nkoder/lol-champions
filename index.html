@@ -11,6 +11,12 @@
     <meta name="description"
           content="Website with League of Legends champions created in order to learn ReactJS basics.">
 
+    <!-- Normalization of CSS rules through browsers -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"/>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato"/>
+    <link rel="stylesheet/less" type="text/css" href="src/lol-champions-app.less"/>
+
 </head>
 <body>
 
@@ -22,6 +28,9 @@
 <div id="app">
     Loading&hellip;
 </div>
+
+<!-- LESS to CSS in runtime -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
 
 <!-- window.fetch polyfill ( https://github.com/github/fetch ) and ES6 Promise polyfill used by fetch -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.2/es6-promise.min.js"></script>
