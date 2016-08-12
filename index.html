@@ -15,32 +15,42 @@
 <body>
 
 <!-- TODO tests https://facebook.github.io/react/docs/test-utils.html -->
-<!-- TODO modules -->
 <!-- TODO styling -->
 <!-- TODO animations? https://facebook.github.io/react/docs/animation.html -->
 <!-- TODO flux/redux ? -->
 
-<div id="app"></div>
+<div id="app">
+    Loading&hellip;
+</div>
 
-<!-- vendor -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.2/lodash.min.js"></script>
+<!-- window.fetch polyfill ( https://github.com/github/fetch ) and ES6 Promise polyfill used by fetch -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.2/es6-promise.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react-dom.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.12.0/babel.min.js"></script>
 
-<!-- app -->
-<script type="text/babel" src="src/filtering/filter.jsx"></script>
-<script type="text/babel" src="src/champions/champion.jsx"></script>
-<script type="text/babel" src="src/champions/champions.jsx"></script>
-<script type="text/babel" src="src/champions/filterable-champions.jsx"></script>
-<script type="text/babel" src="src/lol-champions-app.jsx"></script>
-<script type="text/babel">
-    ReactDOM.render(
-            <LolChampionsApp/>,
-            document.getElementById('app')
-    );
+<!-- SystemJS which will use jspm CDN automatically ( http://developer.telerik.com/featured/taming-react-setup/#s3 ) -->
+<script src="https://jspm.io/system@0.19.34.js"></script>
+
+<script>
+
+    System.config({
+        baseURL : './',
+        transpiler : 'babel',
+        map : {
+            'babel' : 'babel@5.8.38',
+            'lodash' : 'lodash@4.14.2',
+            'react' : 'react@15.3.0',
+            'react-dom' : 'react-dom@15.3.0'
+        }
+    });
+
+    System.import('./src/lol-champions-app')
+          .then(function (lolChampionsApp) {
+              lolChampionsApp.installIn('app');
+          })
+          .catch(function (error) {
+              console.error(error);
+          });
+
 </script>
 
 </body>

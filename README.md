@@ -24,3 +24,9 @@ In case of any problems please note that application was developed with use of:
 * git 2.9.2
 * IntelliJ IDEA 2016.2.1
 * OS X El Capitan 10.11.6
+
+## IntelliJ IDEA setup
+
+Due to issues with Babel/SystemJS setup we are using `js` extension for 
+ JSX files (instead of `jsx`). Therefore you have to set up `React JSX`
+ as `JavaScript language version` for this project.

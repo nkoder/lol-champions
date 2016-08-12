@@ -3,7 +3,7 @@
   "version": "1.0.0-development",
   "description": "Website with League of Legends champions created in order to learn ReactJS basics.",
   "scripts": {
-    "test": "eslint src/**/*",
+    "test": "eslint ./",
     "start": "node serve.js"
   },
   "repository": {

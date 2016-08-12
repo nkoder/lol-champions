@@ -2,8 +2,12 @@
   <dictionary name="nkoder">
     <words>
       <w>capitan</w>
+      <w>intelli</w>
+      <w>jspm</w>
+      <w>minified</w>
       <w>transpilation</w>
       <w>transpiled</w>
+      <w>transpiler</w>
     </words>
   </dictionary>
 </component>

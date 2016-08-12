@@ -1,8 +1,8 @@
+import React from 'react';
+
 // Example of React component defined as Stateless Function
 // https://facebook.github.io/react/docs/reusable-components.html#stateless-functions
-//
-
-const Champion = function (props) {
+export const Champion = function (props) {
     return (
         <div>
             {props.name}, {props.title}

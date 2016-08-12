@@ -1,7 +1,9 @@
-// Example of React component defined as configuration object
-//
+import React from 'react';
+import _ from 'lodash';
+import {Champion} from './champion';
 
-const Champions = React.createClass({
+// Example of React component defined as configuration object
+export const Champions = React.createClass({
 
     propTypes : {
         predicate : React.PropTypes.func
@@ -26,20 +28,17 @@ const Champions = React.createClass({
     },
 
     render : function () {
-        // TODO Can we import somehow 'Champion' instead of having it accessible globally?
         // TODO Is the 'key' attribute really needed in this array of champions? Why is it needed?
-        const championsList = _(this.state.champions)
-            .filter(this.props.predicate)
-            .map(champion =>
-                <li>
-                    <Champion
-                        key={champion.name}
-                        name={champion.name}
-                        title={champion.title}
-                    />
-                </li>
-            );
-        // );
+        // TODO https://facebook.github.io/react/docs/thinking-in-react.html#step-4-identify-where-your-state-should-live
+        const championsList =
+            _(this.state.champions)
+                .filter(this.props.predicate)
+                .map(champion =>
+                    <li key={champion.name}>
+                        <Champion name={champion.name} title={champion.title}/>
+                    </li>
+                )
+                .value();
         return (
             <ul> { championsList } </ul>
         );

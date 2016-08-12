@@ -1,8 +1,9 @@
 ---
-root: true
+root: false
 
 parserOptions:
   ecmaVersion: 6
+  sourceType: 'module'
   ecmaFeatures:
     jsx: true
 
@@ -15,6 +16,7 @@ extends:
 
 env:
   browser: true
+  node: false
 
 rules:
   no-console: off
