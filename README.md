@@ -1,5 +1,7 @@
 # LoL Champions (lol-champions)
 
+[![Build Status](https://travis-ci.org/nkoder/lol-champions.svg?branch=master)](https://travis-ci.org/nkoder/lol-champions)
+
 Website with League of Legends champions created in order to learn ReactJS basics.
 
 ## Development
