@@ -11,6 +11,7 @@ export const Champion = function (props) {
 };
 
 // TODO looks like `isRequired` does not show warning when prop is nor provided... Why?
+// Probably we are using production version of React which does not handle PropTypes...
 Champion.propTypes = {
     name : React.PropTypes.string.isRequired,
     title : React.PropTypes.string.isRequired
